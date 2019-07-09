@@ -1,0 +1,2298 @@
+# 1 "hello.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 346 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "hello.c" 2
+# 13 "hello.c"
+# 1 "/usr/local/include/fuse/fuse.h" 1
+# 26 "/usr/local/include/fuse/fuse.h"
+# 1 "/usr/local/include/fuse/fuse_common.h" 1
+# 18 "/usr/local/include/fuse/fuse_common.h"
+# 1 "/usr/local/include/fuse/fuse_opt.h" 1
+# 76 "/usr/local/include/fuse/fuse_opt.h"
+struct fuse_opt {
+
+ const char *templ;
+
+
+
+
+
+ unsigned long offset;
+
+
+
+
+
+ int value;
+};
+# 108 "/usr/local/include/fuse/fuse_opt.h"
+struct fuse_args {
+
+ int argc;
+
+
+ char **argv;
+
+
+ int allocated;
+};
+# 179 "/usr/local/include/fuse/fuse_opt.h"
+typedef int (*fuse_opt_proc_t)(void *data, const char *arg, int key,
+          struct fuse_args *outargs);
+# 202 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_parse(struct fuse_args *args, void *data,
+     const struct fuse_opt opts[], fuse_opt_proc_t proc);
+# 212 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_add_opt(char **opts, const char *opt);
+# 221 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_add_opt_escaped(char **opts, const char *opt);
+# 230 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_add_arg(struct fuse_args *args, const char *arg);
+# 245 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_insert_arg(struct fuse_args *args, int pos, const char *arg);
+# 254 "/usr/local/include/fuse/fuse_opt.h"
+void fuse_opt_free_args(struct fuse_args *args);
+# 264 "/usr/local/include/fuse/fuse_opt.h"
+int fuse_opt_match(const struct fuse_opt opts[], const char *opt);
+# 19 "/usr/local/include/fuse/fuse_common.h" 2
+# 1 "/usr/include/stdint.h" 1 3 4
+# 32 "/usr/include/stdint.h" 3 4
+# 1 "/usr/include/sys/cdefs.h" 1 3 4
+# 33 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/machine/_types.h" 1 3 4
+
+
+
+
+
+# 1 "/usr/include/x86/_types.h" 1 3 4
+# 46 "/usr/include/x86/_types.h" 3 4
+# 1 "/usr/include/machine/_limits.h" 1 3 4
+
+
+
+
+
+# 1 "/usr/include/x86/_limits.h" 1 3 4
+# 7 "/usr/include/machine/_limits.h" 2 3 4
+# 47 "/usr/include/x86/_types.h" 2 3 4
+
+
+
+
+
+
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef short __int16_t;
+typedef unsigned short __uint16_t;
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
+
+typedef long __int64_t;
+typedef unsigned long __uint64_t;
+# 79 "/usr/include/x86/_types.h" 3 4
+typedef __int32_t __clock_t;
+typedef __int64_t __critical_t;
+
+typedef double __double_t;
+typedef float __float_t;
+
+typedef __int64_t __intfptr_t;
+typedef __int64_t __intptr_t;
+# 97 "/usr/include/x86/_types.h" 3 4
+typedef __int64_t __intmax_t;
+typedef __int32_t __int_fast8_t;
+typedef __int32_t __int_fast16_t;
+typedef __int32_t __int_fast32_t;
+typedef __int64_t __int_fast64_t;
+typedef __int8_t __int_least8_t;
+typedef __int16_t __int_least16_t;
+typedef __int32_t __int_least32_t;
+typedef __int64_t __int_least64_t;
+
+typedef __int64_t __ptrdiff_t;
+typedef __int64_t __register_t;
+typedef __int64_t __segsz_t;
+typedef __uint64_t __size_t;
+typedef __int64_t __ssize_t;
+typedef __int64_t __time_t;
+typedef __uint64_t __uintfptr_t;
+typedef __uint64_t __uintptr_t;
+# 125 "/usr/include/x86/_types.h" 3 4
+typedef __uint64_t __uintmax_t;
+typedef __uint32_t __uint_fast8_t;
+typedef __uint32_t __uint_fast16_t;
+typedef __uint32_t __uint_fast32_t;
+typedef __uint64_t __uint_fast64_t;
+typedef __uint8_t __uint_least8_t;
+typedef __uint16_t __uint_least16_t;
+typedef __uint32_t __uint_least32_t;
+typedef __uint64_t __uint_least64_t;
+
+typedef __uint64_t __u_register_t;
+typedef __uint64_t __vm_offset_t;
+typedef __uint64_t __vm_paddr_t;
+typedef __uint64_t __vm_size_t;
+# 149 "/usr/include/x86/_types.h" 3 4
+typedef int ___wchar_t;
+# 158 "/usr/include/x86/_types.h" 3 4
+typedef __builtin_va_list __va_list;
+# 173 "/usr/include/x86/_types.h" 3 4
+typedef __va_list __gnuc_va_list;
+# 7 "/usr/include/machine/_types.h" 2 3 4
+# 34 "/usr/include/sys/_types.h" 2 3 4
+
+
+
+
+typedef __int32_t __blksize_t;
+typedef __int64_t __blkcnt_t;
+typedef __int32_t __clockid_t;
+typedef __uint32_t __fflags_t;
+typedef __uint64_t __fsblkcnt_t;
+typedef __uint64_t __fsfilcnt_t;
+typedef __uint32_t __gid_t;
+typedef __int64_t __id_t;
+typedef __uint32_t __ino_t;
+typedef long __key_t;
+typedef __int32_t __lwpid_t;
+typedef __uint16_t __mode_t;
+typedef int __accmode_t;
+typedef int __nl_item;
+typedef __uint16_t __nlink_t;
+typedef __int64_t __off_t;
+typedef __int64_t __off64_t;
+typedef __int32_t __pid_t;
+typedef __int64_t __rlim_t;
+
+
+typedef __uint8_t __sa_family_t;
+typedef __uint32_t __socklen_t;
+typedef long __suseconds_t;
+typedef struct __timer *__timer_t;
+typedef struct __mq *__mqd_t;
+typedef __uint32_t __uid_t;
+typedef unsigned int __useconds_t;
+typedef int __cpuwhich_t;
+typedef int __cpulevel_t;
+typedef int __cpusetid_t;
+# 88 "/usr/include/sys/_types.h" 3 4
+typedef int __ct_rune_t;
+typedef __ct_rune_t __rune_t;
+typedef __ct_rune_t __wint_t;
+
+
+
+typedef __uint_least16_t __char16_t;
+typedef __uint_least32_t __char32_t;
+
+
+
+
+
+
+
+typedef struct {
+ long long __max_align1 __attribute__((__aligned__(_Alignof(long long))));
+
+ long double __max_align2 __attribute__((__aligned__(_Alignof(long double))));
+
+} __max_align_t;
+
+typedef __uint32_t __dev_t;
+
+typedef __uint32_t __fixpt_t;
+
+
+
+
+
+typedef union {
+ char __mbstate8[128];
+ __int64_t _mbstateL;
+} __mbstate_t;
+
+typedef __uintmax_t __rman_res_t;
+# 34 "/usr/include/stdint.h" 2 3 4
+
+# 1 "/usr/include/machine/_stdint.h" 1 3 4
+
+
+
+
+
+# 1 "/usr/include/x86/_stdint.h" 1 3 4
+# 43 "/usr/include/x86/_stdint.h" 3 4
+# 1 "/usr/include/machine/_limits.h" 1 3 4
+# 44 "/usr/include/x86/_stdint.h" 2 3 4
+# 7 "/usr/include/machine/_stdint.h" 2 3 4
+# 36 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/sys/_stdint.h" 1 3 4
+# 34 "/usr/include/sys/_stdint.h" 3 4
+typedef __int8_t int8_t;
+
+
+
+
+typedef __int16_t int16_t;
+
+
+
+
+typedef __int32_t int32_t;
+
+
+
+
+typedef __int64_t int64_t;
+
+
+
+
+typedef __uint8_t uint8_t;
+
+
+
+
+typedef __uint16_t uint16_t;
+
+
+
+
+typedef __uint32_t uint32_t;
+
+
+
+
+typedef __uint64_t uint64_t;
+
+
+
+
+typedef __intptr_t intptr_t;
+
+
+
+typedef __uintptr_t uintptr_t;
+
+
+
+typedef __intmax_t intmax_t;
+
+
+
+typedef __uintmax_t uintmax_t;
+# 37 "/usr/include/stdint.h" 2 3 4
+
+typedef __int_least8_t int_least8_t;
+typedef __int_least16_t int_least16_t;
+typedef __int_least32_t int_least32_t;
+typedef __int_least64_t int_least64_t;
+
+typedef __uint_least8_t uint_least8_t;
+typedef __uint_least16_t uint_least16_t;
+typedef __uint_least32_t uint_least32_t;
+typedef __uint_least64_t uint_least64_t;
+
+typedef __int_fast8_t int_fast8_t;
+typedef __int_fast16_t int_fast16_t;
+typedef __int_fast32_t int_fast32_t;
+typedef __int_fast64_t int_fast64_t;
+
+typedef __uint_fast8_t uint_fast8_t;
+typedef __uint_fast16_t uint_fast16_t;
+typedef __uint_fast32_t uint_fast32_t;
+typedef __uint_fast64_t uint_fast64_t;
+# 20 "/usr/local/include/fuse/fuse_common.h" 2
+# 1 "/usr/include/sys/types.h" 1 3 4
+# 44 "/usr/include/sys/types.h" 3 4
+# 1 "/usr/include/machine/endian.h" 1 3 4
+
+
+
+
+
+# 1 "/usr/include/x86/endian.h" 1 3 4
+# 91 "/usr/include/x86/endian.h" 3 4
+static __inline __uint16_t
+__bswap16_var(__uint16_t _x)
+{
+
+ return ((__uint16_t)((_x) << 8 | (_x) >> 8));
+}
+
+static __inline __uint32_t
+__bswap32_var(__uint32_t _x)
+{
+
+
+ __asm("bswap %0" : "+r" (_x));
+ return (_x);
+
+
+
+}
+
+static __inline __uint64_t
+__bswap64_var(__uint64_t _x)
+{
+
+
+ __asm("bswap %0" : "+r" (_x));
+ return (_x);
+
+
+
+
+
+
+
+}
+# 7 "/usr/include/machine/endian.h" 2 3 4
+# 45 "/usr/include/sys/types.h" 2 3 4
+
+
+# 1 "/usr/include/sys/_pthreadtypes.h" 1 3 4
+# 44 "/usr/include/sys/_pthreadtypes.h" 3 4
+struct pthread;
+struct pthread_attr;
+struct pthread_cond;
+struct pthread_cond_attr;
+struct pthread_mutex;
+struct pthread_mutex_attr;
+struct pthread_once;
+struct pthread_rwlock;
+struct pthread_rwlockattr;
+struct pthread_barrier;
+struct pthread_barrier_attr;
+struct pthread_spinlock;
+# 65 "/usr/include/sys/_pthreadtypes.h" 3 4
+typedef struct pthread *pthread_t;
+
+
+typedef struct pthread_attr *pthread_attr_t;
+typedef struct pthread_mutex *pthread_mutex_t;
+typedef struct pthread_mutex_attr *pthread_mutexattr_t;
+typedef struct pthread_cond *pthread_cond_t;
+typedef struct pthread_cond_attr *pthread_condattr_t;
+typedef int pthread_key_t;
+typedef struct pthread_once pthread_once_t;
+typedef struct pthread_rwlock *pthread_rwlock_t;
+typedef struct pthread_rwlockattr *pthread_rwlockattr_t;
+typedef struct pthread_barrier *pthread_barrier_t;
+typedef struct pthread_barrierattr *pthread_barrierattr_t;
+typedef struct pthread_spinlock *pthread_spinlock_t;
+
+
+
+
+
+
+
+typedef void *pthread_addr_t;
+typedef void *(*pthread_startroutine_t)(void *);
+
+
+
+
+struct pthread_once {
+ int state;
+ pthread_mutex_t mutex;
+};
+# 48 "/usr/include/sys/types.h" 2 3 4
+
+
+typedef unsigned char u_char;
+typedef unsigned short u_short;
+typedef unsigned int u_int;
+typedef unsigned long u_long;
+
+typedef unsigned short ushort;
+typedef unsigned int uint;
+# 65 "/usr/include/sys/types.h" 3 4
+typedef __uint8_t u_int8_t;
+typedef __uint16_t u_int16_t;
+typedef __uint32_t u_int32_t;
+typedef __uint64_t u_int64_t;
+
+typedef __uint64_t u_quad_t;
+typedef __int64_t quad_t;
+typedef quad_t * qaddr_t;
+
+typedef char * caddr_t;
+typedef const char * c_caddr_t;
+
+
+typedef __blksize_t blksize_t;
+
+
+
+typedef __cpuwhich_t cpuwhich_t;
+typedef __cpulevel_t cpulevel_t;
+typedef __cpusetid_t cpusetid_t;
+
+
+typedef __blkcnt_t blkcnt_t;
+
+
+
+
+typedef __clock_t clock_t;
+
+
+
+
+typedef __clockid_t clockid_t;
+
+
+
+typedef __critical_t critical_t;
+typedef __int64_t daddr_t;
+
+
+typedef __dev_t dev_t;
+
+
+
+
+typedef __fflags_t fflags_t;
+
+
+
+typedef __fixpt_t fixpt_t;
+
+
+typedef __fsblkcnt_t fsblkcnt_t;
+typedef __fsfilcnt_t fsfilcnt_t;
+
+
+
+
+typedef __gid_t gid_t;
+
+
+
+
+typedef __uint32_t in_addr_t;
+
+
+
+
+typedef __uint16_t in_port_t;
+
+
+
+
+typedef __id_t id_t;
+
+
+
+
+typedef __ino_t ino_t;
+
+
+
+
+typedef __key_t key_t;
+
+
+
+
+typedef __lwpid_t lwpid_t;
+
+
+
+
+typedef __mode_t mode_t;
+
+
+
+
+typedef __accmode_t accmode_t;
+
+
+
+
+typedef __nlink_t nlink_t;
+
+
+
+
+typedef __off_t off_t;
+
+
+
+
+typedef __off64_t off64_t;
+
+
+
+
+typedef __pid_t pid_t;
+
+
+
+typedef __register_t register_t;
+
+
+typedef __rlim_t rlim_t;
+
+
+
+typedef __int64_t sbintime_t;
+
+typedef __segsz_t segsz_t;
+
+
+typedef __size_t size_t;
+
+
+
+
+typedef __ssize_t ssize_t;
+
+
+
+
+typedef __suseconds_t suseconds_t;
+
+
+
+
+typedef __time_t time_t;
+
+
+
+
+typedef __timer_t timer_t;
+
+
+
+
+typedef __mqd_t mqd_t;
+
+
+
+typedef __u_register_t u_register_t;
+
+
+typedef __uid_t uid_t;
+
+
+
+
+typedef __useconds_t useconds_t;
+
+
+
+
+
+typedef unsigned long cap_ioctl_t;
+
+
+
+
+struct cap_rights;
+
+typedef struct cap_rights cap_rights_t;
+
+
+typedef __vm_offset_t vm_offset_t;
+typedef __int64_t vm_ooffset_t;
+typedef __vm_paddr_t vm_paddr_t;
+typedef __uint64_t vm_pindex_t;
+typedef __vm_size_t vm_size_t;
+
+typedef __rman_res_t rman_res_t;
+# 312 "/usr/include/sys/types.h" 3 4
+static __inline __uint16_t
+__bitcount16(__uint16_t _x)
+{
+
+ _x = (_x & 0x5555) + ((_x & 0xaaaa) >> 1);
+ _x = (_x & 0x3333) + ((_x & 0xcccc) >> 2);
+ _x = (_x + (_x >> 4)) & 0x0f0f;
+ _x = (_x + (_x >> 8)) & 0x00ff;
+ return (_x);
+}
+
+static __inline __uint32_t
+__bitcount32(__uint32_t _x)
+{
+
+ _x = (_x & 0x55555555) + ((_x & 0xaaaaaaaa) >> 1);
+ _x = (_x & 0x33333333) + ((_x & 0xcccccccc) >> 2);
+ _x = (_x + (_x >> 4)) & 0x0f0f0f0f;
+ _x = (_x + (_x >> 8));
+ _x = (_x + (_x >> 16)) & 0x000000ff;
+ return (_x);
+}
+
+
+static __inline __uint64_t
+__bitcount64(__uint64_t _x)
+{
+
+ _x = (_x & 0x5555555555555555) + ((_x & 0xaaaaaaaaaaaaaaaa) >> 1);
+ _x = (_x & 0x3333333333333333) + ((_x & 0xcccccccccccccccc) >> 2);
+ _x = (_x + (_x >> 4)) & 0x0f0f0f0f0f0f0f0f;
+ _x = (_x + (_x >> 8));
+ _x = (_x + (_x >> 16));
+ _x = (_x + (_x >> 32)) & 0x000000ff;
+ return (_x);
+}
+# 365 "/usr/include/sys/types.h" 3 4
+# 1 "/usr/include/sys/select.h" 1 3 4
+# 38 "/usr/include/sys/select.h" 3 4
+# 1 "/usr/include/sys/_sigset.h" 1 3 4
+# 51 "/usr/include/sys/_sigset.h" 3 4
+typedef struct __sigset {
+ __uint32_t __bits[4];
+} __sigset_t;
+# 39 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_timeval.h" 1 3 4
+# 47 "/usr/include/sys/_timeval.h" 3 4
+struct timeval {
+ time_t tv_sec;
+ suseconds_t tv_usec;
+};
+# 40 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/timespec.h" 1 3 4
+# 38 "/usr/include/sys/timespec.h" 3 4
+# 1 "/usr/include/sys/_timespec.h" 1 3 4
+# 44 "/usr/include/sys/_timespec.h" 3 4
+struct timespec {
+ time_t tv_sec;
+ long tv_nsec;
+};
+# 39 "/usr/include/sys/timespec.h" 2 3 4
+# 58 "/usr/include/sys/timespec.h" 3 4
+struct itimerspec {
+ struct timespec it_interval;
+ struct timespec it_value;
+};
+# 41 "/usr/include/sys/select.h" 2 3 4
+
+typedef unsigned long __fd_mask;
+
+typedef __fd_mask fd_mask;
+
+
+
+
+typedef __sigset_t sigset_t;
+# 71 "/usr/include/sys/select.h" 3 4
+typedef struct fd_set {
+ __fd_mask __fds_bits[(((1024) + (((sizeof(__fd_mask) * 8)) - 1)) / ((sizeof(__fd_mask) * 8)))];
+} fd_set;
+# 98 "/usr/include/sys/select.h" 3 4
+int pselect(int, fd_set *restrict, fd_set *restrict, fd_set *restrict,
+ const struct timespec *restrict, const sigset_t *restrict);
+
+
+
+int select(int, fd_set *, fd_set *, fd_set *, struct timeval *);
+# 366 "/usr/include/sys/types.h" 2 3 4
+# 385 "/usr/include/sys/types.h" 3 4
+int ftruncate(int, off_t);
+
+
+
+off_t lseek(int, off_t, int);
+
+
+
+void * mmap(void *, size_t, int, int, int, off_t);
+
+
+
+int truncate(const char *, off_t);
+# 21 "/usr/local/include/fuse/fuse_common.h" 2
+# 45 "/usr/local/include/fuse/fuse_common.h"
+struct fuse_file_info {
+
+ int flags;
+
+
+ unsigned long fh_old;
+
+
+
+ int writepage;
+
+
+
+ unsigned int direct_io : 1;
+
+
+
+ unsigned int keep_cache : 1;
+
+
+
+
+ unsigned int flush : 1;
+
+
+
+ unsigned int nonseekable : 1;
+
+
+
+
+
+ unsigned int flock_release : 1;
+
+
+ unsigned int padding : 27;
+
+
+
+ uint64_t fh;
+
+
+ uint64_t lock_owner;
+};
+# 140 "/usr/local/include/fuse/fuse_common.h"
+struct fuse_conn_info {
+
+
+
+ unsigned proto_major;
+
+
+
+
+ unsigned proto_minor;
+
+
+
+
+ unsigned async_read;
+
+
+
+
+ unsigned max_write;
+
+
+
+
+ unsigned max_readahead;
+
+
+
+
+ unsigned capable;
+
+
+
+
+ unsigned want;
+
+
+
+
+ unsigned max_background;
+
+
+
+
+ unsigned congestion_threshold;
+
+
+
+
+ unsigned reserved[23];
+};
+
+struct fuse_session;
+struct fuse_chan;
+struct fuse_pollhandle;
+# 206 "/usr/local/include/fuse/fuse_common.h"
+struct fuse_chan *fuse_mount(const char *mountpoint, struct fuse_args *args);
+
+
+
+
+
+
+
+void fuse_unmount(const char *mountpoint, struct fuse_chan *ch);
+# 237 "/usr/local/include/fuse/fuse_common.h"
+int fuse_parse_cmdline(struct fuse_args *args, char **mountpoint,
+         int *multithreaded, int *foreground);
+
+
+
+
+
+
+
+int fuse_daemonize(int foreground);
+
+
+
+
+
+
+int fuse_version(void);
+
+
+
+
+
+
+void fuse_pollhandle_destroy(struct fuse_pollhandle *ph);
+# 269 "/usr/local/include/fuse/fuse_common.h"
+enum fuse_buf_flags {
+
+
+
+
+
+
+ FUSE_BUF_IS_FD = (1 << 1),
+# 285 "/usr/local/include/fuse/fuse_common.h"
+ FUSE_BUF_FD_SEEK = (1 << 2),
+# 294 "/usr/local/include/fuse/fuse_common.h"
+ FUSE_BUF_FD_RETRY = (1 << 3),
+};
+
+
+
+
+enum fuse_buf_copy_flags {
+# 310 "/usr/local/include/fuse/fuse_common.h"
+ FUSE_BUF_NO_SPLICE = (1 << 1),
+
+
+
+
+
+
+
+ FUSE_BUF_FORCE_SPLICE = (1 << 2),
+# 327 "/usr/local/include/fuse/fuse_common.h"
+ FUSE_BUF_SPLICE_MOVE = (1 << 3),
+# 336 "/usr/local/include/fuse/fuse_common.h"
+ FUSE_BUF_SPLICE_NONBLOCK= (1 << 4),
+};
+
+
+
+
+
+
+
+struct fuse_buf {
+
+
+
+ size_t size;
+
+
+
+
+ enum fuse_buf_flags flags;
+
+
+
+
+
+
+ void *mem;
+
+
+
+
+
+
+ int fd;
+
+
+
+
+
+
+ off_t pos;
+};
+# 386 "/usr/local/include/fuse/fuse_common.h"
+struct fuse_bufvec {
+
+
+
+ size_t count;
+
+
+
+
+ size_t idx;
+
+
+
+
+ size_t off;
+
+
+
+
+ struct fuse_buf buf[1];
+};
+# 429 "/usr/local/include/fuse/fuse_common.h"
+size_t fuse_buf_size(const struct fuse_bufvec *bufv);
+# 439 "/usr/local/include/fuse/fuse_common.h"
+ssize_t fuse_buf_copy(struct fuse_bufvec *dst, struct fuse_bufvec *src,
+        enum fuse_buf_copy_flags flags);
+# 455 "/usr/local/include/fuse/fuse_common.h"
+int fuse_set_signal_handlers(struct fuse_session *se);
+# 465 "/usr/local/include/fuse/fuse_common.h"
+void fuse_remove_signal_handlers(struct fuse_session *se);
+# 27 "/usr/local/include/fuse/fuse.h" 2
+
+# 1 "/usr/include/fcntl.h" 1 3 4
+# 271 "/usr/include/fcntl.h" 3 4
+struct flock {
+ off_t l_start;
+ off_t l_len;
+ pid_t l_pid;
+ short l_type;
+ short l_whence;
+ int l_sysid;
+};
+
+
+
+
+
+
+struct __oflock {
+ off_t l_start;
+ off_t l_len;
+ pid_t l_pid;
+ short l_type;
+ short l_whence;
+};
+# 316 "/usr/include/fcntl.h" 3 4
+int open(const char *, int, ...);
+int creat(const char *, mode_t);
+int fcntl(int, int, ...);
+
+int flock(int, int);
+
+
+int openat(int, const char *, int, ...);
+
+
+int posix_fadvise(int, off_t, off_t, int);
+int posix_fallocate(int, off_t, off_t);
+# 29 "/usr/local/include/fuse/fuse.h" 2
+# 1 "/usr/include/time.h" 1 3 4
+# 45 "/usr/include/time.h" 3 4
+# 1 "/usr/include/sys/_null.h" 1 3 4
+# 46 "/usr/include/time.h" 2 3 4
+# 125 "/usr/include/time.h" 3 4
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long tm_gmtoff;
+ char *tm_zone;
+};
+
+
+extern char *tzname[];
+
+
+
+char *asctime(const struct tm *);
+clock_t clock(void);
+char *ctime(const time_t *);
+
+double difftime(time_t, time_t);
+
+
+struct tm *gmtime(const time_t *);
+struct tm *localtime(const time_t *);
+time_t mktime(struct tm *);
+size_t strftime(char * restrict, size_t, const char * restrict,
+    const struct tm * restrict);
+time_t time(time_t *);
+
+struct sigevent;
+int timer_create(clockid_t, struct sigevent *restrict, timer_t *restrict);
+int timer_delete(timer_t);
+int timer_gettime(timer_t, struct itimerspec *);
+int timer_getoverrun(timer_t);
+int timer_settime(timer_t, int, const struct itimerspec *restrict,
+ struct itimerspec *restrict);
+
+
+void tzset(void);
+
+
+
+int clock_getres(clockid_t, struct timespec *);
+int clock_gettime(clockid_t, struct timespec *);
+int clock_settime(clockid_t, const struct timespec *);
+int nanosleep(const struct timespec *, struct timespec *);
+
+
+
+int clock_getcpuclockid(pid_t, clockid_t *);
+int clock_nanosleep(clockid_t, int, const struct timespec *, struct timespec *);
+
+
+
+char *asctime_r(const struct tm *, char *);
+char *ctime_r(const time_t *, char *);
+struct tm *gmtime_r(const time_t *, struct tm *);
+struct tm *localtime_r(const time_t *, struct tm *);
+
+
+
+char *strptime(const char * restrict, const char * restrict,
+    struct tm * restrict);
+
+
+
+char *timezone(int, int);
+void tzsetwall(void);
+time_t timelocal(struct tm * const);
+time_t timegm(struct tm * const);
+int timer_oshandle_np(timer_t timerid);
+
+
+
+
+# 1 "/usr/include/xlocale/_time.h" 1 3 4
+# 34 "/usr/include/xlocale/_time.h" 3 4
+typedef struct _xlocale *locale_t;
+# 45 "/usr/include/xlocale/_time.h" 3 4
+size_t strftime_l(char * restrict, size_t, const char * restrict,
+     const struct tm * restrict, locale_t) __attribute__((__format__ (__strftime__, 3, 0)));
+# 204 "/usr/include/time.h" 2 3 4
+# 30 "/usr/local/include/fuse/fuse.h" 2
+# 1 "/usr/include/utime.h" 1 3 4
+# 44 "/usr/include/utime.h" 3 4
+struct utimbuf {
+ time_t actime;
+ time_t modtime;
+};
+
+
+int utime(const char *, const struct utimbuf *);
+# 31 "/usr/local/include/fuse/fuse.h" 2
+
+# 1 "/usr/include/sys/stat.h" 1 3 4
+# 99 "/usr/include/sys/stat.h" 3 4
+# 1 "/usr/include/sys/time.h" 1 3 4
+# 40 "/usr/include/sys/time.h" 3 4
+struct timezone {
+ int tz_minuteswest;
+ int tz_dsttime;
+};
+# 53 "/usr/include/sys/time.h" 3 4
+struct bintime {
+ time_t sec;
+ uint64_t frac;
+};
+
+static __inline void
+bintime_addx(struct bintime *_bt, uint64_t _x)
+{
+ uint64_t _u;
+
+ _u = _bt->frac;
+ _bt->frac += _x;
+ if (_u > _bt->frac)
+  _bt->sec++;
+}
+
+static __inline void
+bintime_add(struct bintime *_bt, const struct bintime *_bt2)
+{
+ uint64_t _u;
+
+ _u = _bt->frac;
+ _bt->frac += _bt2->frac;
+ if (_u > _bt->frac)
+  _bt->sec++;
+ _bt->sec += _bt2->sec;
+}
+
+static __inline void
+bintime_sub(struct bintime *_bt, const struct bintime *_bt2)
+{
+ uint64_t _u;
+
+ _u = _bt->frac;
+ _bt->frac -= _bt2->frac;
+ if (_u < _bt->frac)
+  _bt->sec--;
+ _bt->sec -= _bt2->sec;
+}
+
+static __inline void
+bintime_mul(struct bintime *_bt, u_int _x)
+{
+ uint64_t _p1, _p2;
+
+ _p1 = (_bt->frac & 0xffffffffull) * _x;
+ _p2 = (_bt->frac >> 32) * _x + (_p1 >> 32);
+ _bt->sec *= _x;
+ _bt->sec += (_p2 >> 32);
+ _bt->frac = (_p2 << 32) | (_p1 & 0xffffffffull);
+}
+
+static __inline void
+bintime_shift(struct bintime *_bt, int _exp)
+{
+
+ if (_exp > 0) {
+  _bt->sec <<= _exp;
+  _bt->sec |= _bt->frac >> (64 - _exp);
+  _bt->frac <<= _exp;
+ } else if (_exp < 0) {
+  _bt->frac >>= -_exp;
+  _bt->frac |= (uint64_t)_bt->sec << (64 + _exp);
+  _bt->sec >>= -_exp;
+ }
+}
+# 134 "/usr/include/sys/time.h" 3 4
+static __inline int
+sbintime_getsec(sbintime_t _sbt)
+{
+
+ return (_sbt >> 32);
+}
+
+static __inline sbintime_t
+bttosbt(const struct bintime _bt)
+{
+
+ return (((sbintime_t)_bt.sec << 32) + (_bt.frac >> 32));
+}
+
+static __inline struct bintime
+sbttobt(sbintime_t _sbt)
+{
+ struct bintime _bt;
+
+ _bt.sec = _sbt >> 32;
+ _bt.frac = _sbt << 32;
+ return (_bt);
+}
+
+
+
+
+
+
+static __inline int64_t
+sbttons(sbintime_t _sbt)
+{
+
+ return ((1000000000 * _sbt) >> 32);
+}
+
+static __inline sbintime_t
+nstosbt(int64_t _ns)
+{
+
+ return ((_ns * (((uint64_t)1 << 63) / 500000000)) >> 32);
+}
+
+static __inline int64_t
+sbttous(sbintime_t _sbt)
+{
+
+ return ((1000000 * _sbt) >> 32);
+}
+
+static __inline sbintime_t
+ustosbt(int64_t _us)
+{
+
+ return ((_us * (((uint64_t)1 << 63) / 500000)) >> 32);
+}
+
+static __inline int64_t
+sbttoms(sbintime_t _sbt)
+{
+
+ return ((1000 * _sbt) >> 32);
+}
+
+static __inline sbintime_t
+mstosbt(int64_t _ms)
+{
+
+ return ((_ms * (((uint64_t)1 << 63) / 500)) >> 32);
+}
+# 219 "/usr/include/sys/time.h" 3 4
+static __inline void
+bintime2timespec(const struct bintime *_bt, struct timespec *_ts)
+{
+
+ _ts->tv_sec = _bt->sec;
+ _ts->tv_nsec = ((uint64_t)1000000000 *
+     (uint32_t)(_bt->frac >> 32)) >> 32;
+}
+
+static __inline void
+timespec2bintime(const struct timespec *_ts, struct bintime *_bt)
+{
+
+ _bt->sec = _ts->tv_sec;
+
+ _bt->frac = _ts->tv_nsec * (uint64_t)18446744073LL;
+}
+
+static __inline void
+bintime2timeval(const struct bintime *_bt, struct timeval *_tv)
+{
+
+ _tv->tv_sec = _bt->sec;
+ _tv->tv_usec = ((uint64_t)1000000 * (uint32_t)(_bt->frac >> 32)) >> 32;
+}
+
+static __inline void
+timeval2bintime(const struct timeval *_tv, struct bintime *_bt)
+{
+
+ _bt->sec = _tv->tv_sec;
+
+ _bt->frac = _tv->tv_usec * (uint64_t)18446744073709LL;
+}
+
+static __inline struct timespec
+sbttots(sbintime_t _sbt)
+{
+ struct timespec _ts;
+
+ _ts.tv_sec = _sbt >> 32;
+ _ts.tv_nsec = sbttons((uint32_t)_sbt);
+ return (_ts);
+}
+
+static __inline sbintime_t
+tstosbt(struct timespec _ts)
+{
+
+ return (((sbintime_t)_ts.tv_sec << 32) + nstosbt(_ts.tv_nsec));
+}
+
+static __inline struct timeval
+sbttotv(sbintime_t _sbt)
+{
+ struct timeval _tv;
+
+ _tv.tv_sec = _sbt >> 32;
+ _tv.tv_usec = sbttous((uint32_t)_sbt);
+ return (_tv);
+}
+
+static __inline sbintime_t
+tvtosbt(struct timeval _tv)
+{
+
+ return (((sbintime_t)_tv.tv_sec << 32) + ustosbt(_tv.tv_usec));
+}
+# 366 "/usr/include/sys/time.h" 3 4
+struct itimerval {
+ struct timeval it_interval;
+ struct timeval it_value;
+};
+
+
+
+
+struct clockinfo {
+ int hz;
+ int tick;
+ int spare;
+ int stathz;
+ int profhz;
+};
+# 525 "/usr/include/sys/time.h" 3 4
+int setitimer(int, const struct itimerval *, struct itimerval *);
+int utimes(const char *, const struct timeval *);
+
+
+int adjtime(const struct timeval *, struct timeval *);
+int clock_getcpuclockid2(id_t, int, clockid_t *);
+int futimes(int, const struct timeval *);
+int futimesat(int, const char *, const struct timeval [2]);
+int lutimes(const char *, const struct timeval *);
+int settimeofday(const struct timeval *, const struct timezone *);
+
+
+
+int getitimer(int, struct itimerval *);
+int gettimeofday(struct timeval *, struct timezone *);
+# 100 "/usr/include/sys/stat.h" 2 3 4
+# 122 "/usr/include/sys/stat.h" 3 4
+struct stat {
+ __dev_t st_dev;
+ ino_t st_ino;
+ mode_t st_mode;
+ nlink_t st_nlink;
+ uid_t st_uid;
+ gid_t st_gid;
+ __dev_t st_rdev;
+ struct timespec st_atim;
+ struct timespec st_mtim;
+ struct timespec st_ctim;
+ off_t st_size;
+ blkcnt_t st_blocks;
+ blksize_t st_blksize;
+ fflags_t st_flags;
+ __uint32_t st_gen;
+ __int32_t st_lspare;
+ struct timespec st_birthtim;
+# 148 "/usr/include/sys/stat.h" 3 4
+ unsigned int :(8 / 2) * (16 - (int)sizeof(struct timespec));
+ unsigned int :(8 / 2) * (16 - (int)sizeof(struct timespec));
+};
+# 318 "/usr/include/sys/stat.h" 3 4
+int chflags(const char *, unsigned long);
+int chflagsat(int, const char *, unsigned long, int);
+
+int chmod(const char *, mode_t);
+
+int fchflags(int, unsigned long);
+
+
+int fchmod(int, mode_t);
+
+
+int fchmodat(int, const char *, mode_t, int);
+int futimens(int fd, const struct timespec times[2]);
+int utimensat(int fd, const char *path, const struct timespec times[2],
+  int flag);
+
+int fstat(int, struct stat *);
+
+int lchflags(const char *, unsigned long);
+int lchmod(const char *, mode_t);
+
+
+int lstat(const char * restrict, struct stat * restrict);
+
+int mkdir(const char *, mode_t);
+int mkfifo(const char *, mode_t);
+
+int mknod(const char *, mode_t, dev_t);
+
+
+int stat(const char * restrict, struct stat * restrict);
+mode_t umask(mode_t);
+
+int fstatat(int, const char *, struct stat *, int);
+int mkdirat(int, const char *, mode_t);
+int mkfifoat(int, const char *, mode_t);
+
+
+int mknodat(int, const char *, mode_t, dev_t);
+# 33 "/usr/local/include/fuse/fuse.h" 2
+# 1 "/usr/include/sys/statvfs.h" 1 3 4
+# 59 "/usr/include/sys/statvfs.h" 3 4
+struct statvfs {
+ fsblkcnt_t f_bavail;
+ fsblkcnt_t f_bfree;
+ fsblkcnt_t f_blocks;
+ fsfilcnt_t f_favail;
+ fsfilcnt_t f_ffree;
+ fsfilcnt_t f_files;
+ unsigned long f_bsize;
+ unsigned long f_flag;
+ unsigned long f_frsize;
+ unsigned long f_fsid;
+ unsigned long f_namemax;
+};
+
+
+
+
+
+
+int fstatvfs(int, struct statvfs *);
+int statvfs(const char *restrict, struct statvfs *restrict);
+# 34 "/usr/local/include/fuse/fuse.h" 2
+# 1 "/usr/include/sys/uio.h" 1 3 4
+# 38 "/usr/include/sys/uio.h" 3 4
+# 1 "/usr/include/sys/_iovec.h" 1 3 4
+# 43 "/usr/include/sys/_iovec.h" 3 4
+struct iovec {
+ void *iov_base;
+ size_t iov_len;
+};
+# 39 "/usr/include/sys/uio.h" 2 3 4
+# 51 "/usr/include/sys/uio.h" 3 4
+enum uio_rw { UIO_READ, UIO_WRITE };
+
+
+enum uio_seg {
+ UIO_USERSPACE,
+ UIO_SYSSPACE,
+ UIO_NOCOPY
+};
+# 116 "/usr/include/sys/uio.h" 3 4
+ssize_t readv(int, const struct iovec *, int);
+ssize_t writev(int, const struct iovec *, int);
+
+ssize_t preadv(int, const struct iovec *, int, off_t);
+ssize_t pwritev(int, const struct iovec *, int, off_t);
+# 35 "/usr/local/include/fuse/fuse.h" 2
+# 45 "/usr/local/include/fuse/fuse.h"
+struct fuse;
+
+
+struct fuse_cmd;
+# 58 "/usr/local/include/fuse/fuse.h"
+typedef int (*fuse_fill_dir_t) (void *buf, const char *name,
+    const struct stat *stbuf, off_t off);
+
+
+typedef struct fuse_dirhandle *fuse_dirh_t;
+typedef int (*fuse_dirfil_t) (fuse_dirh_t h, const char *name, int type,
+         ino_t ino);
+# 88 "/usr/local/include/fuse/fuse.h"
+struct fuse_operations {
+
+
+
+
+
+
+ int (*getattr) (const char *, struct stat *);
+# 105 "/usr/local/include/fuse/fuse.h"
+ int (*readlink) (const char *, char *, size_t);
+
+
+ int (*getdir) (const char *, fuse_dirh_t, fuse_dirfil_t);
+
+
+
+
+
+
+
+ int (*mknod) (const char *, mode_t, dev_t);
+
+
+
+
+
+
+
+ int (*mkdir) (const char *, mode_t);
+
+
+ int (*unlink) (const char *);
+
+
+ int (*rmdir) (const char *);
+
+
+ int (*symlink) (const char *, const char *);
+
+
+ int (*rename) (const char *, const char *);
+
+
+ int (*link) (const char *, const char *);
+
+
+ int (*chmod) (const char *, mode_t);
+
+
+ int (*chown) (const char *, uid_t, gid_t);
+
+
+ int (*truncate) (const char *, off_t);
+
+
+
+
+
+ int (*utime) (const char *, struct utimbuf *);
+# 173 "/usr/local/include/fuse/fuse.h"
+ int (*open) (const char *, struct fuse_file_info *);
+# 186 "/usr/local/include/fuse/fuse.h"
+ int (*read) (const char *, char *, size_t, off_t,
+       struct fuse_file_info *);
+# 197 "/usr/local/include/fuse/fuse.h"
+ int (*write) (const char *, const char *, size_t, off_t,
+        struct fuse_file_info *);
+# 207 "/usr/local/include/fuse/fuse.h"
+ int (*statfs) (const char *, struct statvfs *);
+# 232 "/usr/local/include/fuse/fuse.h"
+ int (*flush) (const char *, struct fuse_file_info *);
+# 248 "/usr/local/include/fuse/fuse.h"
+ int (*release) (const char *, struct fuse_file_info *);
+# 257 "/usr/local/include/fuse/fuse.h"
+ int (*fsync) (const char *, int, struct fuse_file_info *);
+
+
+ int (*setxattr) (const char *, const char *, const char *, size_t, int);
+
+
+ int (*getxattr) (const char *, const char *, char *, size_t);
+
+
+ int (*listxattr) (const char *, char *, size_t);
+
+
+ int (*removexattr) (const char *, const char *);
+# 281 "/usr/local/include/fuse/fuse.h"
+ int (*opendir) (const char *, struct fuse_file_info *);
+# 304 "/usr/local/include/fuse/fuse.h"
+ int (*readdir) (const char *, void *, fuse_fill_dir_t, off_t,
+   struct fuse_file_info *);
+
+
+
+
+
+ int (*releasedir) (const char *, struct fuse_file_info *);
+# 320 "/usr/local/include/fuse/fuse.h"
+ int (*fsyncdir) (const char *, int, struct fuse_file_info *);
+# 332 "/usr/local/include/fuse/fuse.h"
+ void *(*init) (struct fuse_conn_info *conn);
+# 341 "/usr/local/include/fuse/fuse.h"
+ void (*destroy) (void *);
+# 354 "/usr/local/include/fuse/fuse.h"
+ int (*access) (const char *, int);
+# 368 "/usr/local/include/fuse/fuse.h"
+ int (*create) (const char *, mode_t, struct fuse_file_info *);
+# 382 "/usr/local/include/fuse/fuse.h"
+ int (*ftruncate) (const char *, off_t, struct fuse_file_info *);
+# 396 "/usr/local/include/fuse/fuse.h"
+ int (*fgetattr) (const char *, struct stat *, struct fuse_file_info *);
+# 430 "/usr/local/include/fuse/fuse.h"
+ int (*lock) (const char *, struct fuse_file_info *, int cmd,
+       struct flock *);
+# 444 "/usr/local/include/fuse/fuse.h"
+ int (*utimens) (const char *, const struct timespec tv[2]);
+# 454 "/usr/local/include/fuse/fuse.h"
+ int (*bmap) (const char *, size_t blocksize, uint64_t *idx);
+# 466 "/usr/local/include/fuse/fuse.h"
+ unsigned int flag_nullpath_ok:1;
+# 480 "/usr/local/include/fuse/fuse.h"
+ unsigned int flag_nopath:1;
+
+
+
+
+
+ unsigned int flag_utime_omit_ok:1;
+
+
+
+
+ unsigned int flag_reserved:29;
+# 508 "/usr/local/include/fuse/fuse.h"
+ int (*ioctl) (const char *, int cmd, void *arg,
+        struct fuse_file_info *, unsigned int flags, void *data);
+# 528 "/usr/local/include/fuse/fuse.h"
+ int (*poll) (const char *, struct fuse_file_info *,
+       struct fuse_pollhandle *ph, unsigned *reventsp);
+# 539 "/usr/local/include/fuse/fuse.h"
+ int (*write_buf) (const char *, struct fuse_bufvec *buf, off_t off,
+     struct fuse_file_info *);
+# 558 "/usr/local/include/fuse/fuse.h"
+ int (*read_buf) (const char *, struct fuse_bufvec **bufp,
+    size_t size, off_t off, struct fuse_file_info *);
+# 580 "/usr/local/include/fuse/fuse.h"
+ int (*flock) (const char *, struct fuse_file_info *, int op);
+# 592 "/usr/local/include/fuse/fuse.h"
+ int (*fallocate) (const char *, int, off_t, off_t,
+     struct fuse_file_info *);
+};
+
+
+
+
+
+
+struct fuse_context {
+
+ struct fuse *fuse;
+
+
+ uid_t uid;
+
+
+ gid_t gid;
+
+
+ pid_t pid;
+
+
+ void *private_data;
+
+
+ mode_t umask;
+};
+# 665 "/usr/local/include/fuse/fuse.h"
+struct fuse *fuse_new(struct fuse_chan *ch, struct fuse_args *args,
+        const struct fuse_operations *op, size_t op_size,
+        void *user_data);
+# 679 "/usr/local/include/fuse/fuse.h"
+void fuse_destroy(struct fuse *f);
+# 690 "/usr/local/include/fuse/fuse.h"
+int fuse_loop(struct fuse *f);
+
+
+
+
+
+
+void fuse_exit(struct fuse *f);
+# 712 "/usr/local/include/fuse/fuse.h"
+int fuse_loop_mt(struct fuse *f);
+# 722 "/usr/local/include/fuse/fuse.h"
+struct fuse_context *fuse_get_context(void);
+# 742 "/usr/local/include/fuse/fuse.h"
+int fuse_getgroups(int size, gid_t list[]);
+
+
+
+
+
+
+int fuse_interrupted(void);
+
+
+
+
+
+
+int fuse_invalidate(struct fuse *f, const char *path);
+
+
+int fuse_is_lib_option(const char *opt);
+
+
+
+
+
+
+int fuse_main_real(int argc, char *argv[], const struct fuse_operations *op,
+     size_t op_size, void *user_data);
+# 776 "/usr/local/include/fuse/fuse.h"
+int fuse_start_cleanup_thread(struct fuse *fuse);
+
+
+
+
+
+
+
+void fuse_stop_cleanup_thread(struct fuse *fuse);
+# 795 "/usr/local/include/fuse/fuse.h"
+int fuse_clean_cache(struct fuse *fuse);
+# 806 "/usr/local/include/fuse/fuse.h"
+struct fuse_fs;
+# 817 "/usr/local/include/fuse/fuse.h"
+int fuse_fs_getattr(struct fuse_fs *fs, const char *path, struct stat *buf);
+int fuse_fs_fgetattr(struct fuse_fs *fs, const char *path, struct stat *buf,
+       struct fuse_file_info *fi);
+int fuse_fs_rename(struct fuse_fs *fs, const char *oldpath,
+     const char *newpath);
+int fuse_fs_unlink(struct fuse_fs *fs, const char *path);
+int fuse_fs_rmdir(struct fuse_fs *fs, const char *path);
+int fuse_fs_symlink(struct fuse_fs *fs, const char *linkname,
+      const char *path);
+int fuse_fs_link(struct fuse_fs *fs, const char *oldpath, const char *newpath);
+int fuse_fs_release(struct fuse_fs *fs, const char *path,
+      struct fuse_file_info *fi);
+int fuse_fs_open(struct fuse_fs *fs, const char *path,
+   struct fuse_file_info *fi);
+int fuse_fs_read(struct fuse_fs *fs, const char *path, char *buf, size_t size,
+   off_t off, struct fuse_file_info *fi);
+int fuse_fs_read_buf(struct fuse_fs *fs, const char *path,
+       struct fuse_bufvec **bufp, size_t size, off_t off,
+       struct fuse_file_info *fi);
+int fuse_fs_write(struct fuse_fs *fs, const char *path, const char *buf,
+    size_t size, off_t off, struct fuse_file_info *fi);
+int fuse_fs_write_buf(struct fuse_fs *fs, const char *path,
+        struct fuse_bufvec *buf, off_t off,
+        struct fuse_file_info *fi);
+int fuse_fs_fsync(struct fuse_fs *fs, const char *path, int datasync,
+    struct fuse_file_info *fi);
+int fuse_fs_flush(struct fuse_fs *fs, const char *path,
+    struct fuse_file_info *fi);
+int fuse_fs_statfs(struct fuse_fs *fs, const char *path, struct statvfs *buf);
+int fuse_fs_opendir(struct fuse_fs *fs, const char *path,
+      struct fuse_file_info *fi);
+int fuse_fs_readdir(struct fuse_fs *fs, const char *path, void *buf,
+      fuse_fill_dir_t filler, off_t off,
+      struct fuse_file_info *fi);
+int fuse_fs_fsyncdir(struct fuse_fs *fs, const char *path, int datasync,
+       struct fuse_file_info *fi);
+int fuse_fs_releasedir(struct fuse_fs *fs, const char *path,
+         struct fuse_file_info *fi);
+int fuse_fs_create(struct fuse_fs *fs, const char *path, mode_t mode,
+     struct fuse_file_info *fi);
+int fuse_fs_lock(struct fuse_fs *fs, const char *path,
+   struct fuse_file_info *fi, int cmd, struct flock *lock);
+int fuse_fs_flock(struct fuse_fs *fs, const char *path,
+    struct fuse_file_info *fi, int op);
+int fuse_fs_chmod(struct fuse_fs *fs, const char *path, mode_t mode);
+int fuse_fs_chown(struct fuse_fs *fs, const char *path, uid_t uid, gid_t gid);
+int fuse_fs_truncate(struct fuse_fs *fs, const char *path, off_t size);
+int fuse_fs_ftruncate(struct fuse_fs *fs, const char *path, off_t size,
+        struct fuse_file_info *fi);
+int fuse_fs_utimens(struct fuse_fs *fs, const char *path,
+      const struct timespec tv[2]);
+int fuse_fs_access(struct fuse_fs *fs, const char *path, int mask);
+int fuse_fs_readlink(struct fuse_fs *fs, const char *path, char *buf,
+       size_t len);
+int fuse_fs_mknod(struct fuse_fs *fs, const char *path, mode_t mode,
+    dev_t rdev);
+int fuse_fs_mkdir(struct fuse_fs *fs, const char *path, mode_t mode);
+int fuse_fs_setxattr(struct fuse_fs *fs, const char *path, const char *name,
+       const char *value, size_t size, int flags);
+int fuse_fs_getxattr(struct fuse_fs *fs, const char *path, const char *name,
+       char *value, size_t size);
+int fuse_fs_listxattr(struct fuse_fs *fs, const char *path, char *list,
+        size_t size);
+int fuse_fs_removexattr(struct fuse_fs *fs, const char *path,
+   const char *name);
+int fuse_fs_bmap(struct fuse_fs *fs, const char *path, size_t blocksize,
+   uint64_t *idx);
+int fuse_fs_ioctl(struct fuse_fs *fs, const char *path, int cmd, void *arg,
+    struct fuse_file_info *fi, unsigned int flags, void *data);
+int fuse_fs_poll(struct fuse_fs *fs, const char *path,
+   struct fuse_file_info *fi, struct fuse_pollhandle *ph,
+   unsigned *reventsp);
+int fuse_fs_fallocate(struct fuse_fs *fs, const char *path, int mode,
+   off_t offset, off_t length, struct fuse_file_info *fi);
+void fuse_fs_init(struct fuse_fs *fs, struct fuse_conn_info *conn);
+void fuse_fs_destroy(struct fuse_fs *fs);
+
+int fuse_notify_poll(struct fuse_pollhandle *ph);
+# 907 "/usr/local/include/fuse/fuse.h"
+struct fuse_fs *fuse_fs_new(const struct fuse_operations *op, size_t op_size,
+       void *user_data);
+# 920 "/usr/local/include/fuse/fuse.h"
+struct fuse_module {
+
+
+
+ const char *name;
+# 940 "/usr/local/include/fuse/fuse.h"
+ struct fuse_fs *(*factory)(struct fuse_args *args,
+       struct fuse_fs *fs[]);
+
+ struct fuse_module *next;
+ struct fusemod_so *so;
+ int ctr;
+};
+
+
+
+
+
+
+
+void fuse_register_module(struct fuse_module *mod);
+# 979 "/usr/local/include/fuse/fuse.h"
+typedef void (*fuse_processor_t)(struct fuse *, struct fuse_cmd *, void *);
+
+
+struct fuse *fuse_setup(int argc, char *argv[],
+   const struct fuse_operations *op, size_t op_size,
+   char **mountpoint, int *multithreaded,
+   void *user_data);
+
+
+void fuse_teardown(struct fuse *fuse, char *mountpoint);
+
+
+struct fuse_cmd *fuse_read_cmd(struct fuse *f);
+
+
+void fuse_process_cmd(struct fuse *f, struct fuse_cmd *cmd);
+
+
+
+int fuse_loop_mt_proc(struct fuse *f, fuse_processor_t proc, void *data);
+
+
+
+int fuse_exited(struct fuse *f);
+
+
+void fuse_set_getcontext_func(struct fuse_context *(*func)(void));
+
+
+struct fuse_session *fuse_get_session(struct fuse *f);
+# 14 "hello.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 43 "/usr/include/stdio.h" 3 4
+#pragma clang diagnostic push
+# 43 "/usr/include/stdio.h" 3 4
+#pragma clang diagnostic ignored "-Wnullability-completeness"
+
+typedef __off_t fpos_t;
+# 54 "/usr/include/stdio.h" 3 4
+typedef size_t rsize_t;
+# 75 "/usr/include/stdio.h" 3 4
+typedef __va_list va_list;
+# 89 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+# 122 "/usr/include/stdio.h" 3 4
+struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (* _Nullable _close)(void *);
+ int (* _Nullable _read)(void *, char *, int);
+ fpos_t (* _Nullable _seek)(void *, fpos_t, int);
+ int (* _Nullable _write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ unsigned char *_up;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+
+ struct pthread_mutex *_fl_mutex;
+ struct pthread *_fl_owner;
+ int _fl_count;
+ int _orientation;
+ __mbstate_t _mbstate;
+ int _flags2;
+};
+
+
+typedef struct __sFILE FILE;
+
+
+
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+# 249 "/usr/include/stdio.h" 3 4
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * restrict, fpos_t * restrict);
+char *fgets(char * restrict, int, FILE * restrict);
+FILE *fopen(const char * restrict, const char * restrict);
+int fprintf(FILE * restrict, const char * restrict, ...);
+int fputc(int, FILE *);
+int fputs(const char * restrict, FILE * restrict);
+size_t fread(void * restrict, size_t, size_t, FILE * restrict);
+FILE *freopen(const char * restrict, const char * restrict, FILE * restrict);
+int fscanf(FILE * restrict, const char * restrict, ...);
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * restrict, size_t, size_t, FILE * restrict);
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+
+char *gets_s(char *, rsize_t);
+
+void perror(const char *);
+int printf(const char * restrict, ...);
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename(const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * restrict, ...);
+void setbuf(FILE * restrict, char * restrict);
+int setvbuf(FILE * restrict, char * restrict, int, size_t);
+int sprintf(char * restrict, const char * restrict, ...);
+int sscanf(const char * restrict, const char * restrict, ...);
+FILE *tmpfile(void);
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * restrict, const char * restrict,
+     __va_list);
+int vprintf(const char * restrict, __va_list);
+int vsprintf(char * restrict, const char * restrict,
+     __va_list);
+
+
+int snprintf(char * restrict, size_t, const char * restrict,
+     ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * restrict, const char * restrict, __va_list)
+     __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * restrict, __va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * restrict, size_t, const char * restrict,
+     __va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * restrict, const char * restrict, __va_list)
+     __attribute__((__format__ (__scanf__, 2, 0)));
+# 318 "/usr/include/stdio.h" 3 4
+char *ctermid(char *);
+FILE *fdopen(int, const char *);
+int fileno(FILE *);
+
+
+
+int pclose(FILE *);
+FILE *popen(const char *, const char *);
+
+
+
+int ftrylockfile(FILE *);
+void flockfile(FILE *);
+void funlockfile(FILE *);
+
+
+
+
+
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+void clearerr_unlocked(FILE *);
+int feof_unlocked(FILE *);
+int ferror_unlocked(FILE *);
+int fileno_unlocked(FILE *);
+
+
+
+int fseeko(FILE *, __off_t, int);
+__off_t ftello(FILE *);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+char *tempnam(const char *, const char *);
+
+
+
+FILE *fmemopen(void * restrict, size_t, const char * restrict);
+ssize_t getdelim(char ** restrict, size_t * restrict, int,
+     FILE * restrict);
+FILE *open_memstream(char **, size_t *);
+int renameat(int, const char *, int, const char *);
+int vdprintf(int, const char * restrict, __va_list) __attribute__((__format__ (__printf__, 2, 0)));
+# 414 "/usr/include/stdio.h" 3 4
+int asprintf(char **, const char *, ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+void fcloseall(void);
+int fdclose(FILE *, int *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *) __attribute__((__format_arg__ (2)));
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char **, const char *, __va_list)
+     __attribute__((__format__ (__printf__, 2, 0)));
+
+
+
+
+
+
+extern const int sys_nerr;
+extern const char * const sys_errlist[];
+
+
+
+
+FILE *funopen(const void *,
+     int (* _Nullable)(void *, char *, int),
+     int (* _Nullable)(void *, const char *, int),
+     fpos_t (* _Nullable)(void *, fpos_t, int),
+     int (* _Nullable)(void *));
+
+
+
+typedef __ssize_t cookie_read_function_t(void *, char *, size_t);
+typedef __ssize_t cookie_write_function_t(void *, const char *, size_t);
+typedef int cookie_seek_function_t(void *, off64_t *, int);
+typedef int cookie_close_function_t(void *);
+typedef struct {
+ cookie_read_function_t *read;
+ cookie_write_function_t *write;
+ cookie_seek_function_t *seek;
+ cookie_close_function_t *close;
+} cookie_io_functions_t;
+FILE *fopencookie(void *, const char *, cookie_io_functions_t);
+# 481 "/usr/include/stdio.h" 3 4
+int __srget(FILE *);
+int __swbuf(int, FILE *);
+
+
+
+
+
+
+
+static __inline int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 512 "/usr/include/stdio.h" 3 4
+extern int __isthreaded;
+# 557 "/usr/include/stdio.h" 3 4
+#pragma clang diagnostic pop
+# 15 "hello.c" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 45 "/usr/include/string.h" 3 4
+# 1 "/usr/include/strings.h" 1 3 4
+# 42 "/usr/include/strings.h" 3 4
+int bcmp(const void *, const void *, size_t) __attribute__((__pure__));
+void bcopy(const void *, void *, size_t);
+void bzero(void *, size_t);
+
+
+void explicit_bzero(void *, size_t);
+
+
+int ffs(int) __attribute__((__const__));
+
+
+int ffsl(long) __attribute__((__const__));
+int ffsll(long long) __attribute__((__const__));
+int fls(int) __attribute__((__const__));
+int flsl(long) __attribute__((__const__));
+int flsll(long long) __attribute__((__const__));
+
+
+char *index(const char *, int) __attribute__((__pure__));
+char *rindex(const char *, int) __attribute__((__pure__));
+
+int strcasecmp(const char *, const char *) __attribute__((__pure__));
+int strncasecmp(const char *, const char *, size_t) __attribute__((__pure__));
+
+
+
+# 1 "/usr/include/xlocale/_strings.h" 1 3 4
+# 46 "/usr/include/xlocale/_strings.h" 3 4
+int strcasecmp_l(const char *, const char *, locale_t);
+int strncasecmp_l(const char *, const char *, size_t, locale_t);
+# 68 "/usr/include/strings.h" 2 3 4
+# 46 "/usr/include/string.h" 2 3 4
+# 55 "/usr/include/string.h" 3 4
+void *memccpy(void * restrict, const void * restrict, int, size_t);
+
+void *memchr(const void *, int, size_t) __attribute__((__pure__));
+
+void *memrchr(const void *, int, size_t) __attribute__((__pure__));
+
+int memcmp(const void *, const void *, size_t) __attribute__((__pure__));
+void *memcpy(void * restrict, const void * restrict, size_t);
+
+void *memmem(const void *, size_t, const void *, size_t) __attribute__((__pure__));
+
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+
+char *stpcpy(char * restrict, const char * restrict);
+char *stpncpy(char * restrict, const char * restrict, size_t);
+
+
+char *strcasestr(const char *, const char *) __attribute__((__pure__));
+
+char *strcat(char * restrict, const char * restrict);
+char *strchr(const char *, int) __attribute__((__pure__));
+
+char *strchrnul(const char*, int) __attribute__((__pure__));
+
+int strcmp(const char *, const char *) __attribute__((__pure__));
+int strcoll(const char *, const char *);
+char *strcpy(char * restrict, const char * restrict);
+size_t strcspn(const char *, const char *) __attribute__((__pure__));
+
+char *strdup(const char *) __attribute__((__malloc__));
+
+char *strerror(int);
+
+int strerror_r(int, char *, size_t);
+
+
+size_t strlcat(char * restrict, const char * restrict, size_t);
+size_t strlcpy(char * restrict, const char * restrict, size_t);
+
+size_t strlen(const char *) __attribute__((__pure__));
+
+void strmode(int, char *);
+
+char *strncat(char * restrict, const char * restrict, size_t);
+int strncmp(const char *, const char *, size_t) __attribute__((__pure__));
+char *strncpy(char * restrict, const char * restrict, size_t);
+
+char *strndup(const char *, size_t) __attribute__((__malloc__));
+size_t strnlen(const char *, size_t) __attribute__((__pure__));
+
+
+char *strnstr(const char *, const char *, size_t) __attribute__((__pure__));
+
+char *strpbrk(const char *, const char *) __attribute__((__pure__));
+char *strrchr(const char *, int) __attribute__((__pure__));
+
+char *strsep(char **, const char *);
+
+
+char *strsignal(int);
+
+size_t strspn(const char *, const char *) __attribute__((__pure__));
+char *strstr(const char *, const char *) __attribute__((__pure__));
+char *strtok(char * restrict, const char * restrict);
+
+char *strtok_r(char *, const char *, char **);
+
+size_t strxfrm(char * restrict, const char * restrict, size_t);
+# 134 "/usr/include/string.h" 3 4
+void swab(const void * restrict, void * restrict, ssize_t);
+
+
+int timingsafe_bcmp(const void *, const void *, size_t);
+int timingsafe_memcmp(const void *, const void *, size_t);
+
+
+
+
+# 1 "/usr/include/xlocale/_string.h" 1 3 4
+# 46 "/usr/include/xlocale/_string.h" 3 4
+int strcoll_l(const char *, const char *, locale_t);
+size_t strxfrm_l(char *, const char *, size_t, locale_t);
+# 143 "/usr/include/string.h" 2 3 4
+# 154 "/usr/include/string.h" 3 4
+typedef int errno_t;
+
+
+
+errno_t memset_s(void *, rsize_t, int, rsize_t);
+# 16 "hello.c" 2
+# 1 "/usr/include/errno.h" 1 3 4
+# 44 "/usr/include/errno.h" 3 4
+int * __error(void);
+# 17 "hello.c" 2
+
+
+static const char *hello_str = "Hello World!\n";
+static const char *hello_path = "/hello";
+
+static int hello_getattr(const char *path, struct stat *stbuf)
+{
+ int res = 0;
+
+ memset(stbuf, 0, sizeof(struct stat));
+ if (strcmp(path, "/") == 0) {
+  stbuf->st_mode = 0040000 | 0755;
+  stbuf->st_nlink = 2;
+ } else if (strcmp(path, hello_path) == 0) {
+  stbuf->st_mode = 0100000 | 0444;
+  stbuf->st_nlink = 1;
+  stbuf->st_size = strlen(hello_str);
+ } else
+  res = -2;
+
+ return res;
+}
+
+static int hello_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
+    off_t offset, struct fuse_file_info *fi)
+{
+ (void) offset;
+ (void) fi;
+
+ if (strcmp(path, "/") != 0)
+  return -2;
+
+ filler(buf, ".", ((void *)0), 0);
+ filler(buf, "..", ((void *)0), 0);
+ filler(buf, hello_path + 1, ((void *)0), 0);
+
+ return 0;
+}
+
+static int hello_open(const char *path, struct fuse_file_info *fi)
+{
+ if (strcmp(path, hello_path) != 0)
+  return -2;
+
+ if ((fi->flags & 3) != 0x0000)
+  return -13;
+
+ return 0;
+}
+
+static int hello_read(const char *path, char *buf, size_t size, off_t offset,
+        struct fuse_file_info *fi)
+{
+ size_t len;
+ (void) fi;
+ if(strcmp(path, hello_path) != 0)
+  return -2;
+
+ len = strlen(hello_str);
+ if (offset < len) {
+  if (offset + size > len)
+   size = len - offset;
+  memcpy(buf, hello_str + offset, size);
+ } else
+  size = 0;
+
+ return size;
+}
+
+static struct fuse_operations hello_oper = {
+ .getattr = hello_getattr,
+ .readdir = hello_readdir,
+ .open = hello_open,
+ .read = hello_read,
+};
+
+int main(int argc, char *argv[])
+{
+ return fuse_main_real(argc, argv, &hello_oper, sizeof(*(&hello_oper)), ((void *)0));
+}

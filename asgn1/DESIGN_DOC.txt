@@ -1,0 +1,24 @@
+1) If separated by semi-colon, split commands on ';', insert NULL, pass command(s) to chop_it_up().
+2) Check for leading or trailing PIPES, handle PIPES, and PIPE with STDERR, pass to run_cmd(). 
+3) Handle 'cd', 'exit', and execvp() and wait() commands, dup to replace file descriptors, handle redirection 
+   and overwrite PIPES and STDERR, when necessary.
+
+
+main(): 
+	parses arguments entered using get_args(), saves initial working directory, and loops through the char* args array
+	to parse commands, while looking for semi-colon separated commands. If a ';' is found, we insert NULL into the args
+	array, we store the indices of the start of the command, and pass args, and index to chop_it_up().
+
+chop_it_up(): 
+	Check for invalid PIPE location, get the start and length of the passed in command, store previous PIPE fd, create 	   fd_pipe[2] PIPE. Pass command and correlating redirection info to run_cmd().
+	
+run_cmd():
+	runs entered commands. Check first for exit and cd, as they aren't handled using the execvp() function. Then create
+	a child process. Child process handles dup to replace file descriptors and standard error and checks for >, <, >> 
+	and &. Copies image after forking using execvp(), waits, and closes PIPES.
+
+trail_check():
+	helper function to check for trailing redirection symbols.
+
+str_contains():
+	check to see if a character is contained in given string. Useful for |&, >>, >>&, and >&.
