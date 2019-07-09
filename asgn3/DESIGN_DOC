@@ -1,0 +1,7 @@
+The program will make a FIFO queue by combining the active (PQ_ACTIVE) and inactive (PQ_INACTIVE) queue into one logical queue. 
+To do this, instead of checking the reference bits in the inactive queue, we will call vm_page_deactivate(m) to send pages to the inactive queue. 
+We keep track of the "age" of pages in our FIFO queue by setting the sequence numbers when we push from active to inactive. 
+From here on, we follow the same logic in the inactive queue except instead of checking the reference bit in the inactive queue, 
+we drop the page after checking it is not a special page like a marker, wired or busy page.
+
+For our benchmark, we made created over a million 4k pages in an array - pile - and iterated over pile. We step by 4k (4096) to ensure each page is touched and also ensuring we have the need to drop a page pages. Our benchmark shows us that we do indeed drop the oldest pages in our FIFO queue first, but we are running into a weird issue, where we run out of swap space and then our statistics get out of whack. We tried hard to figure out why this was happening and could not. 

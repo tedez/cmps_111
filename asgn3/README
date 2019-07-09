@@ -1,0 +1,17 @@
+Changed FreeBSD kernel files in an attempt to create a FIFO algorithm instead of a second chance algorithm for page out algorithm. To do this, we combined the active and inactive queue into one logical queue and calling this logical queue the FIFO queue. To keep track of the age of a page, we had a global sequenceNum variable which we used to assign to pages. The lower the number, the older the page is.
+
+To install our kernel, we move the files by running "make move". 
+
+Then install the kernel by typing the following commands in order, 
+	cd /usr/src && sudo make buildkernel
+	cd /usr/src && sudo make installkernel
+	sudo reboot
+
+
+To run the benchmark, you type "make". The output executable is called loaf. 
+To run it, type "./loaf". 
+
+We have in our vm_pageout.c some code that will print out statistics for us in the kernel, these will be logged, to see stas, 
+	type dmesg
+
+To print out our statistics, we look at vm meter to get the count of the number of pages in the inactive and the active queue. We add these two together to get the number of pages in our logical FIFO queue. To get the age of the first page in the queue, we looked at the front of the active queue and got the sequenceNum of the first page in the active queue and printed that out. To get the age of the last thing in the queue, we looked at the last page in the active queue and printed out the sequenceNum of that page. 
